@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        body {
+            font: normal 12pt Arial;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Verificação de nacionalidade</h1>
+    <label for="txtnal">Digite ao lado em qual país nasceu: </label>
+    <input type="text" name="txtnal" id="txtnal" required minlength="3" maxlength="25" placeholder="Ex: Brasil">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="resultado">
+
+    </div>
+    <script>
+        function verificar() {
+            var pais = window.document.getElementById('txtnal')
+            var nal = String(pais.value)
+            var resultado = window.document.getElementById('resultado')
+            resultado.innerHTML = `<p>Você nasceu em ${nal}</p>`
+
+            if (nal != 'Brasil') {
+                resultado.innerHTML += `<p>Logo, é reconhecido como Estrangeiro</p>`
+            }
+
+            else {
+                resultado.innerHTML += `<p>Logo, é reconhecido como Brasileiro</p>`
+            }
+        }
+    </script>
+</body>
+
+</html>
