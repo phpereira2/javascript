@@ -29,7 +29,7 @@ function adicionar() {
     } else {
         alert('Valor inválido ou já encontrado na lista.')
     }
-    txtnumvalue = ''
+    txtnum.value = ''
     txtnum.focus()
 }
 
